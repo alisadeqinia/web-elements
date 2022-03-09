@@ -1,0 +1,265 @@
+/* reset and initialize area */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+:root {
+    --backNavColor: rgb(18, 156, 180);
+    --iconColor: #f1f1f1;
+    --bxShadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+/* ======================================= */
+
+/* header area */
+.nav-box {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    padding: 0 70px;
+    background-color: var(--backNavColor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: var(--bxShadow);
+}
+/* ======================================= */
+
+/* bar menu area */
+.nav-box .bars {
+    width: 30%;
+    color: var(--iconColor);
+    cursor: pointer;
+    display: none;
+}
+.nav-box #nav-toggle {
+    display: none;
+}
+/* ======================================= */
+
+/* logo area */
+.logo-box {
+    color: var(--iconColor);
+    font-size: larger;
+    font-weight: 900;
+    cursor: default;
+}
+/* ======================================= */
+
+/* navbar area */
+.navbar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    height: 100%;
+    background-color: var(--backNavColor);
+}
+.navbar .logo-box {
+    display: none;
+}
+.navbar .nav-close {
+    display: none;
+    color: var(--iconColor);
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+.navbar li {
+    cursor: pointer;
+    margin: 0 20px;
+}
+.navbar li a {
+    text-decoration: none;
+    color: var(--iconColor);
+    font-weight: 600;
+}
+.navbar .drop-down {
+    position: relative;
+    line-height: 70px;
+    padding: 0;
+}
+.navbar .drop-down i {
+    margin-left: 5px;
+    color: var(--iconColor);
+    transition: .3s;
+}
+.navbar .drop1:hover i {
+    transform: rotate(-180deg)
+}
+.navbar .drop-down .drop-content {
+    display: none;
+    /* opacity: 0;
+    pointer-events: none; */
+    list-style-type: none;
+    position: absolute;
+    box-shadow: var(--bxShadow);
+    background-color: var(--backNavColor);
+    transition: all .3s;
+}
+.navbar .drop-down .drop-content li {
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    line-height: 40px;
+}
+.navbar .drop-down .drop-content a {
+    padding-left: 20px;
+}
+.navbar .drop-down .dcnt1 {
+    width: 150%;
+    top: 100%;
+    left: 0;
+    border-radius: 0 0 5px 5px;
+}
+.navbar .drop-down .dcnt2 {
+    width: 100%;
+    top: 0;
+    left: 100%;
+    border-radius: 0 5px 5px 5px;
+}
+.navbar .drop1:hover .dcnt1,
+.navbar .drop2:hover .dcnt2 {
+    /* transition does not work with display we can use 2 line below but in vertical mode display is batter */
+    display: block;
+    /* opacity: 1;
+    pointer-events: visible; */
+}
+/* ======================================= */
+
+/* search area */
+.nav-box .search .search-close,
+.nav-box .search .search-open {
+    cursor: pointer;
+    color: var(--iconColor);
+    transition: all .3s;
+}
+.nav-box .search .search-close,
+.nav-box .search #search-toggle {
+    display: none;
+}
+.nav-box .search .search-box {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 100px;
+    padding: 13px;
+    border-radius: 10px;
+    width: 300px;
+    right: 50px;
+    background-color: var(--backNavColor);
+    transition: all .3s;
+}
+.nav-box .search .search-box input {
+    width: 100%;
+    line-height: 30px;
+    border-radius: 5px;
+    padding-left: 15px;
+    z-index: 1;
+}
+.nav-box .search .search-box .arr {
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    background-color: var(--backNavColor);
+    position: absolute;
+    top: -7px;
+    right: 17px;
+}
+.nav-box .search #search-toggle:checked ~ .search-close {
+    display: block;
+}
+.nav-box .search #search-toggle:checked ~ .search-open {
+    display: none;
+}
+.nav-box .search #search-toggle:checked ~ .search-box {
+    opacity: 1;
+    pointer-events: visible;
+    top: calc(100% + 18px);
+}
+/* ======================================= */
+
+/* media query area */
+@media screen and (max-width: 750px) {
+    .logo-box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .nav-box .bars {
+        display: block;
+    }
+    .navbar {
+        align-items: flex-start;
+        top: 100%;
+        left: 0;
+        height: auto;
+        transform: none;
+        flex-direction: column;
+        width: 50%;
+        box-shadow: var(--bxShadow);
+        padding-top: 30px;
+        z-index: 2;
+    }
+    .navbar li {
+        font-size: 20px;
+        margin: 0;
+        padding-left: 50px;
+        width: 100%;
+        line-height: 70px;
+    }
+    .navbar .drop1 {
+        padding-left: 50px;
+    }
+    .navbar .drop-down .drop-content {
+        position: relative;
+        display: none;
+        /* opacity: 0;
+        pointer-events: none; */
+        box-shadow: none;
+        background-color: transparent;
+        transition: all .3s;
+    }
+    .navbar .drop-down .drop-content li {
+        margin: 0;
+        padding: 0;
+        border-bottom: none;
+        line-height: 55px;
+    }
+    .navbar .drop-down .dcnt1 {
+        width: max-content;
+        top: 100%;
+        left: 0;
+        border-radius: 0;
+    }
+    .navbar .drop-down .dcnt2 {
+        width: max-content;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+    }
+    .navbar .drop-down .dcnt2 li {
+        padding-left: 30px;
+    }
+    /* =============================== */
+
+    /* hide and show */
+    .navbar .nav-close {
+        display: block;
+    }
+    .nav-box #nav-toggle:checked ~ .navbar {
+        display: none;
+    }
+}
+@media screen and (max-width: 450px) {
+    .navbar {
+        width: calc(50% + 50px);
+    }
+}

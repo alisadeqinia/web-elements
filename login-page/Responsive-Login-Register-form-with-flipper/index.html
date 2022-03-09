@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/fontawesome.min.css">
+    <link rel="stylesheet" href="static/css/all.min.css">
+    <title>Responsive login page</title>
+</head>
+<body>
+    <div class="login-box">
+        <input type="checkbox" id="check" style="display: none;">
+        <div class="flipper">
+            <div class="front-flip">
+                <div class="text"><!-- place text here --></div>
+                <img class="image" src="static/images/in.jpg" alt="signin">
+            </div>
+            <div class="back-flip">
+                <div class="text"><!-- place text here --></div>
+                <img src="static/images/up.jpeg" alt="signup">
+            </div>
+        </div>
+        <div id="login" class="form-box">
+            <h2>Login</h2>
+            <form method="post" class="signin-form">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    <input type="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    <input type="password" class="form-control" placeholder="Enter your password" required>
+                </div>
+                <div id="forget"><a href="javascript:void(0);">Forgot password?</a></div>
+                <input type="submit" value="Login">
+            </form>
+            <div class="flipping">Don't have an account? <label for="check" class="flip-btn">Signup now</label></div>
+        </div>
+        <div id="registration" class="form-box">
+            <h2>Signup</h2>
+            <form method="post" class="signup-form">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <input type="text" class="form-control" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    <input type="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    <input type="password" class="form-control" placeholder="Enter your password" required>
+                </div>
+                <input type="submit" value="SignUp">
+            </form>
+            <div class="flipping">Already have an account? <label for="check" class="flip-btn">Login now</label></div>
+        </div>
+    </div>
+</body>
+</html>

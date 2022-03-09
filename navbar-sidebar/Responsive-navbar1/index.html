@@ -1,0 +1,63 @@
+<!-- This navbar provides by Ali Sadeqinia
+https://alisadeqinia.github.io 
+but main idea adopted from "codinglab" youtube channel-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/fontawesome.min.css">
+    <link rel="stylesheet" href="static/css/all.min.css">
+    <title>Responsive navbar</title>
+</head>
+<body>
+    <div class="nav-box">
+        <!-- logo area -->
+        <div class="logo-box">Ali Sadeqinia</div>
+        <!-- bar menu area -->
+        <div class="bars">
+            <!-- checkbox and label to turn bar menu to toggle button -->
+            <label for="nav-toggle" class="nav-open"><i class="fas fa-bars"></i></label>
+        </div>
+        <!-- checkbox and label to turn bar menu to toggle button -->
+        <input type="checkbox" id="nav-toggle">
+        <!-- navbar area -->
+        <ul class="navbar">
+            <label for="nav-toggle" class="nav-close"><i class="fas fa-times"></i></label>
+            <li><a href="#">Home</a></li>
+            <li class="drop-down drop1">
+                <a href="javascript:void(0);">Services</a>
+                <i class="fas fa-angle-down"></i>
+                <ul class="drop-content dcnt1">
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Deploy</a></li>
+                    <li class="drop-down drop2">
+                        <a href="javascript:void(0);">Teach</a>
+                        <i class="fas fa-angle-left"></i>
+                        <ul class="drop-content dcnt2">
+                            <li><a href="#">Front end</a></li>
+                            <li><a href="#">Back end</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <!-- search box area -->
+        <div class="search">
+            <!-- checkbox and label to make toggle button for search box -->
+            <input type="checkbox" name="search-toggle" id="search-toggle">
+            <label for="search-toggle" class="search-close"><i class="fas fa-times"></i></label>
+            <label for="search-toggle" class="search-open" ><i class="fas fa-search"></i></label>
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <div class="arr"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,190 @@
+/* Define custom fonts 
+   ====================== */
+@font-face {
+    font-family: IRANSans;
+    src: url('../fonts/IRSNSans.eot');
+    src: url('../fonts/IRSNSans.woff') format('woff'), 
+    url('../fonts/IRSNSans.ttf') format('truetype');
+}
+@font-face {
+    font-family: Shabnam;
+    src: url('../fonts/Shabnam.eot');
+    src: url('../fonts/Shabnam.woff') format('woff'), 
+    url('../fonts/Shabnam.ttf') format('truetype');
+}
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir.eot');
+    src: url('../fonts/Vazir.woff') format('woff'), 
+    url('../fonts/Vazir.ttf') format('truetype');
+}
+
+/* Define color var()
+   ====================== */
+:root {
+    --back: #CBE4CF;
+    --backGuy: #519B5D;
+    --borderGuy: #fff;
+    --backCard: #fff;
+    --icons: #ADDBB5;
+    --intro: #48644D;
+    --star: #4C7353;
+    --btn: #53B463;
+}
+/* ====================== */
+
+* {
+    font-family: IRANSans, Vazir, Shabnam, Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    border: none;
+}
+body {
+    height: 100vh;
+    background-color: var(--back);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow: auto;
+}
+section {
+    position: relative;
+    width: 1070px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+section .card .image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 4px;
+    background-color: var(--backGuy);
+}
+section .card .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--borderGuy);
+}
+.card {
+    background-color: var(--backCard);
+    border-radius: 20px;
+    position: relative;
+    /* width: 300px; */
+}
+.card::before {
+    content: "";
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    background-color: var(--backGuy);
+    border-radius: 20px 20px 0 0;
+}
+.card .card-content {
+    position: relative;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+.card .media-icons {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card .media-icons a {
+    color: var(--icons);
+    opacity: .5;
+    transition: .3s;
+    font-size: 18px;
+}
+.card .media-icons a:hover {
+    opacity: 1;
+}
+.card .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+.intro .name {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--intro);
+    margin-top: 15px;
+}
+.intro .career {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--intro);
+    margin-top: 15px;
+}
+.card .rating {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.card .rating i {
+    color: var(--star);
+    font-size: 18px;
+    margin: 0 2px;
+}
+.card .buttuns {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.card .buttuns button {
+    background-color: var(--btn);
+    border-radius: 20px;
+    color: #fff;
+    width: 45%;
+    height: 2.5rem;
+    border: none;
+    transition: .3s;
+    cursor: pointer;
+}
+.card .buttuns button:hover {
+    background-color: #519B5D;
+}
+
+/* Edit swiper styles */
+.swiper {
+    width: 950px;
+}
+.swiper-pagination-bullet {
+    height: 7px;
+    width: 26px;
+    border-radius: 25px;
+    background-color: var(--btn);
+}
+.swiper-button-next, .swiper-button-prev {
+    opacity: .7;
+    transition: .3s;
+    color: var(--btn);
+}
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    opacity: 1;
+}
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 0;
+}
+
+/* RWD */
+@media screen and (max-width: 800px) {
+    body {
+        height: auto;
+    }
+    section {
+        width: 80%;
+        height: 100%;
+    }
+}
